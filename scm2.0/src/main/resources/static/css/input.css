@@ -1,6 +1,8 @@
+@import "tailwindcss"
 /* ./src/main/resouces/static/css */
 
-@import "tailwindcss";
+/* @import "tailwindcss"; */
+
 
 @tailwind base;
 @tailwind components;

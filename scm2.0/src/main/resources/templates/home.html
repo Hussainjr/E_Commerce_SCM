@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            margin: auto;
-            width: 50%;
-            padding: 30px;
-            background: #e2e2e2;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home Page</title>
+
+    <!-- Correctly linked Tailwind output CSS -->
+    <link rel="stylesheet" th:href="@{/css/output.css}">
 </head>
-<body>
-    <div class="container">
-        <h1 data-th-text="${name}">Welcome to home page</h1>
-        <p>Collage : <span data-th-text="${Collage}"></span></p>
-        <p>GithubRepo : <span data-th-text="${GithubRepo}"> </span></p>
+<body class="bg-gray-100">
 
-        <a data-th-href="${GithubRepo}">Click here to open link</a>
-
-
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex assumenda mollitia natus nam minima numquam quis dolor. Asperiores modi eius, sint doloremque ea pariatur inventore eligendi repellat possimus expedita placeat!
+    <div class="container bg-white border w-1/2 p-4 flex flex-col mx-auto mt-8 rounded shadow">
+        <h1 class="text-5xl font-bold text-blue-800 mb-4" th:text="${name}">Welcome</h1>
+        <p class="text-2xl text-gray-700 mb-2">
+            College: <span th:text="${Collage}">Your College</span>
         </p>
+        <p class="mb-2">
+            GitHub Repo: <span th:text="${GithubRepo}">github.com/example</span>
+        </p>
+
+        <a th:href="${GithubRepo}" class="text-blue-600 underline hover:text-blue-800 mb-4">
+            Click here to view on GitHub
+        </a>
+
+        <p class="text-gray-600 mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <button class="px-4 py-2 rounded bg-blue-700 text-white hover:bg-blue-800 transition">
+            Click here
+        </button>
     </div>
+
 </body>
 </html>
